@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Palette - Professional Education Theme */
+  --primary: 221 83% 53%; /* Bright Trustworthy Blue */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 172 66% 50%; /* Fresh Green/Teal for "BNCC" vibes */
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 25 95% 53%; /* High-conversion Orange for CTAs */
+  --accent-foreground: 210 40% 98%;
+  
+  --background: 210 40% 98%; /* Very light blue-gray tint */
+  --foreground: 222 47% 11%; /* Deep Navy for text */
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  
+  --radius: 0.75rem;
+  
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-bold text-slate-900;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+}
